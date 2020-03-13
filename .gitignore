@@ -1,0 +1,15 @@
+
+# pycharm
+.idea
+
+# node
+node_modules
+
+# compiled versions
+release-builds
+
+# for mac
+.DS_Store
+
+# for builds
+package-lock.json
