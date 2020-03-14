@@ -1,5 +1,5 @@
 {
-  "name": "electronjs-python",
+  "name": "maxwell-flitton-game",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -31,6 +31,7 @@
     "axios": "0.19.2",
     "express": "^4.17.1",
     "electron-root-path": "^1.0.16",
-    "child_process": "^1.0.2"
+    "child_process": "^1.0.2",
+    "react-router-dom": "^5.1.2"
   }
 }

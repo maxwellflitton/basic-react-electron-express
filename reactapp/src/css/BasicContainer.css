@@ -1,0 +1,21 @@
+.myDiv {
+  margin: 20px auto;
+  width: 900px;
+  padding: 30px 25px;
+  background: gray;
+  border: 1px solid #c4c4c4;
+  border-radius: 25px;
+  text-align: center;
+}
+
+.overlay {
+  display: none;
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: gray;
+  top: 50px;
+  left: 50px;
+  padding: 10px;
+  opacity: .8;
+}
