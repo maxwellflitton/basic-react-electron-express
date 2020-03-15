@@ -10,7 +10,8 @@
       "permvenv/**/*",
       "main.js",
       "index.html",
-      "reactapp/**/*"
+      "reactapp/**/*",
+      "expressapp/**/*"
     ]
   },
   "scripts": {
