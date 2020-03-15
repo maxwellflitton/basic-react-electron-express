@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 import Home from "./components/Home";
 import './App.css';
 
@@ -11,6 +12,8 @@ import './App.css';
 class App extends Component {
 
     state = {
+        usersLoaded: false,
+        usersRequestSent: false,
         userProfile: {},
         users: []
     };
@@ -24,23 +27,41 @@ class App extends Component {
         })
       };
 
-    handleGetUserSelection = (data) => {
-        this.setState({
-            users: []
-        })
+    handleGetUsers() {
+        if (this.state.usersRequestSent === false) {
+            this.state.usersRequestSent = true;
+            axios.get("http://127.0.0.1:3001/users/all").then(
+            (response) => {
+                this.state.usersLoaded = true;
+                this.setState({users: response.data});
+            }
+        )
+        } else {}
     };
 
     render () {
-        return (
-            <BrowserRouter className="App">
+        this.handleGetUsers();
+
+        if (this.state.usersLoaded === false) {
+            return (
                 <div className="App">
-                    {/* This is where state is defined */}
-                    {/*userProfile = {this.state.userProfile}*/}
-                    {/*  This is where the routes are defined  */}
-                    <Route exact path="/" component={Home}/>
+                    <p>loading users</p>
                 </div>
-            </BrowserRouter>
-        );
+            )
+        }
+
+        else {
+            return (
+                <BrowserRouter className="App">
+                    <div className="App">
+                        {/* This is where state is defined */}
+                        {/*userProfile = {this.state.userProfile}*/}
+                        {/*  This is where the routes are defined  */}
+                        <Route exact path="/" component={() => <Home Users={this.state.users} />} />
+                    </div>
+                </BrowserRouter>
+            );
+        }
     }
 }
 

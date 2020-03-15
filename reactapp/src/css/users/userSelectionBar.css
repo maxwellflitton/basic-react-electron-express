@@ -1,0 +1,35 @@
+
+
+.UserSelectionDiv {
+  margin: auto;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  width: 600px;
+  padding: 5px 5px 5px 5px;
+  background: #515152;
+  border: 1px solid #c4c4c4;
+  border-radius: 10px;
+  text-align: left;
+  display: flex;
+}
+
+.SelectButton {
+  display: block;
+  margin-left: auto;
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: #53a3ed;
+}
+
+.DeleteButton {
+  display: block;
+  margin-left: auto;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: #c70a0a;
+}
+
+.column {
+  flex: 50%;
+}
