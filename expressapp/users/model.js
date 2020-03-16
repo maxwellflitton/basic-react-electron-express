@@ -44,6 +44,25 @@ class UserManager {
         this.users.push(user);
     }
 
+    deleteUser(firstName, secondName) {
+
+        if (this.users.length === 0) {
+            this.loadUsers();
+        }
+
+        let newUsers = [];
+
+        for (let i = 0, length = this.users.length; i < length; i++) {
+
+            if (this.users[i].firstName !== firstName && this.users[i].secondName !== secondName) {
+                let user = new UserModel(this.users[i].firstName, this.users[i].secondName);
+                newUsers.push(user);
+            }
+        }
+        this.users = newUsers;
+
+        this.saveUsers();
+    }
 }
 
 module.exports = {

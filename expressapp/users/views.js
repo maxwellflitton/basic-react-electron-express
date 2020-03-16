@@ -23,6 +23,18 @@ function renderUserViews(engine) {
         res.end(JSON.stringify(userManager.users))
     });
 
+    engine.post("/users/delete", function(req, res) {
+
+        let firstName = req.body["firstName"];
+        let secondName = req.body["secondName"];
+
+        let userManager = new userModel.UserManager();
+
+        userManager.loadUsers();
+        userManager.deleteUser(firstName, secondName);
+        res.end(JSON.stringify(userManager.users))
+    });
+
 }
 
 module.exports = {

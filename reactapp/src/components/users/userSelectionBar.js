@@ -10,6 +10,7 @@ class UserSelectionBar extends Component {
         this.state = {
             firstName: props.firstName,
             secondName: props.secondName,
+            selectionCallBackFunction: props.callBackFunction,
             width: 600
         }
     }
@@ -23,11 +24,21 @@ class UserSelectionBar extends Component {
     };
 
     delete = () => {
-        console.log("user to be deleted: ", this.state.firstName);
+        let deletePackage = {
+            "firstName": this.state.firstName,
+            "secondName": this.state.secondName,
+            "action": "delete"
+        };
+        this.state.selectionCallBackFunction(deletePackage);
     };
 
     select = () => {
-        console.log("user to be selected: ", this.state.firstName);
+        let selectPackage = {
+            "firstName": this.state.firstName,
+            "secondName": this.state.secondName,
+            "action": "select"
+        };
+        this.state.selectionCallBackFunction(selectPackage);
     };
 
 
